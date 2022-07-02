@@ -1,0 +1,33 @@
+# This is a sample file to set environment variable for mysql docker container.
+# You may use this format to create env.sh file in this directory.
+
+# Container Name
+export CONTAINER_NAME=container-name
+
+# Port
+export MYSQL_PORT=3306
+
+# Root Password (Required)
+export MYSQL_ROOT_PASSWORD=password
+
+# Database to be created on image startup
+export MYSQL_DATABASE=database_name
+
+# User with superuser permissions for the database specified by MYSQL_DATABASE
+export MYSQL_USER=username
+export MYSQL_PASSWORD=password
+
+# Set to a non-empty value, like yes, to allow the container to be started with
+# a blank password for the root user
+# RECOMMENDED TO BE LEFT BLANK!!
+export MYSQL_ALLOW_EMPTY_PASSWORD
+
+# Set to a non-empty value, like yes, to generate a random initial password for
+# the root user
+export MYSQL_RANDOM_ROOT_PASSWORD
+
+# Onetime root password
+export MYSQL_ONETIME_PASSWORD
+
+# Any non-empty value disables timezone loading
+export MYSQL_INITDB_SKIP_TZINFO
