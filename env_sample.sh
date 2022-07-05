@@ -4,6 +4,9 @@
 # Container Name
 export CONTAINER_NAME=container-name
 
+# Network Name
+export NERWORK_NAME
+
 # Port
 export MYSQL_PORT=3306
 
