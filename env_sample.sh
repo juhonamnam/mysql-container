@@ -7,8 +7,8 @@ export CONTAINER_NAME=container-name
 # Network Name
 export NERWORK_NAME
 
-# Port
-export MYSQL_PORT=3306
+# External port to be forwarded
+export EXTERNAL_PORT=3306
 
 # Root Password (Required)
 export MYSQL_ROOT_PASSWORD=password
