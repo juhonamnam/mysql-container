@@ -2,4 +2,4 @@
 /mysql
 
 # env file
-env.sh
+.env

@@ -1,7 +1,7 @@
 # env
-if [[ -f ./env.sh ]]; then
-    echo "getting environment variables from env.sh..."
-    . ./env.sh
+if [[ -f ./.env ]]; then
+    echo "getting environment variables from .env..."
+    . ./.env
 fi
 
 # Stop Running Containers
