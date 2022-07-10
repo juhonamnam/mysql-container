@@ -78,14 +78,11 @@ if [ ${#NERWORK_NAME} -ne 0 ]; then
     ARGS=${ARGS}"--network $NERWORK_NAME "
 fi
 
-if [ ${#PLATFORM} -ne 0 ]; then
-    echo "PLATFORM $PLATFORM "
-    ARGS=${ARGS}"--platform $PLATFORM "
-fi
-
-if [ ${#MYSQL_VERSION} -ne 0 ]; then
-    echo "VERSION $MYSQL_VERSION "
-    MYSQL_VERSION=:$MYSQL_VERSION
+if [ ${#MYSQL_IMAGE} -ne 0 ]; then
+    echo "IMAGE $MYSQL_IMAGE "
+else
+    echo "IMAGE mysql:latest"
+    MYSQL_IMAGE=mysql:latest
 fi
 
 mkdir -p mysql
@@ -93,4 +90,4 @@ docker run \
     ${ARGS} \
     -v $(pwd)/conf.d/custom-config.cnf:/etc/mysql/conf.d/custom-config.cnf \
     -v $(pwd)/mysql:/var/lib/mysql \
-    -d mysql$MYSQL_VERSION
+    -d $MYSQL_IMAGE
