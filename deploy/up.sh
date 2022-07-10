@@ -78,6 +78,11 @@ if [ ${#NERWORK_NAME} -ne 0 ]; then
     ARGS=${ARGS}"--network $NERWORK_NAME "
 fi
 
+if [ ${#PLATFORM} -ne 0 ]; then
+    echo "PLATFORM $PLATFORM "
+    ARGS=${ARGS}"--platform $PLATFORM "
+fi
+
 if [ ${#MYSQL_VERSION} -ne 0 ]; then
     echo "VERSION $MYSQL_VERSION "
     MYSQL_VERSION=:$MYSQL_VERSION
