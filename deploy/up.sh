@@ -78,9 +78,14 @@ if [ ${#NERWORK_NAME} -ne 0 ]; then
     ARGS=${ARGS}"--network $NERWORK_NAME "
 fi
 
+if [ ${#MYSQL_VERSION} -ne 0 ]; then
+    echo "VERSION $MYSQL_VERSION "
+    MYSQL_VERSION=:$MYSQL_VERSION
+fi
+
 mkdir -p mysql
 docker run \
     ${ARGS} \
     -v $(pwd)/conf.d/custom-config.cnf:/etc/mysql/conf.d/custom-config.cnf \
     -v $(pwd)/mysql:/var/lib/mysql \
-    -d mysql:8.0.29
+    -d mysql$MYSQL_VERSION
