@@ -4,6 +4,11 @@ if [[ -f ./.env ]]; then
     . ./.env
 fi
 
+if [ ! ${#CONTAINER_NAME} -ne 0 ]; then
+    echo "CONTAINER_NAME is required"
+    exit 100
+fi
+
 # Stop Running Containers
 RUNNING_CONTAINERS=$(docker ps -q --filter name=$CONTAINER_NAME)
 
